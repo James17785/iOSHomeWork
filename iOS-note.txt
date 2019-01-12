@@ -1,0 +1,116 @@
+///Swift
+1. Auto layout
+ 1) 不同设备同时预览, 按住option，然后按menu > Preview(1) > Main.storyboard (Preview)，就能打开用于预览的assistant editor。
+ 2) 用control+drag方法来添加spacing constraint。
+
+2. UITableView
+
+1) UITableViewCell
+UITableView由UITableViewCell组成，UITabelViewCell负责显示数据。
+
+UITableView的每一行，即每一个UITableViewCell显示一条项目。
+
+UITableViewCell对象的数量不受限制，仅由设备内存决定。
+
+UITableViewCell类定义了单元格在UITableView中的属性和行为。
+
+创建 UITableViewCell 的时候，你可以自定义一个 cell ，或者使用系统预定义的几种格式。系统预定义的 cell 提供了 textLabel、detailTextLabel属性和imageView属性用来设置cell的内容和图片。样式由UITableViewCellStyle枚举来控制：
+
+.default
+包含一个左侧的可选图像视图，和一个左对齐的标签对象。
+
+.value1
+包含一个左侧的可选视图和一个左对齐的标签对象，在单元格右侧还有一个灰色、右对齐的标签对象。
+
+.value2
+包含一个左侧、右对齐的蓝色文字标签对象和一个右侧的左对齐的标签对象。
+
+.subtitle
+包含一个左侧的可选图像视图，和一个左对齐的标签对象，在这个标签对象下方，还有一个字体较小的标签对象。
+
+2) 创建一个UITableView
+创建UITableView，首先是实例化一个UITableView对象，还要涉及到它的代理UITabelViewDataSource、UITableViewDelegate，在UITableViewDataSource代理方法中定义UITableViewCell的样式。
+tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath):
+初始化和复用指定索引位置的UITableViewCell，必须实现。
+
+tableView(_ tableView: UITableView, numberOfRowsInSection section: Int):
+设置某一章节（section）中的单元格数量，必须实现。
+
+UITableViewDataSource
+实现数据源协议定义中的方法，从而设置章节中cell的个数，以及对cell进行初始化和复用设置。
+UITableView中的索引路径包括两个元素，第一个元素section是表格的章节序号，第二个元素row表示章节中的行序号。
+
+还添加了UITableViewDelegate代理协议，它的主要作用是提供一些可选的方法，用来控制表格的选择、指定章节的头和尾的显示、单元格内容的复制和粘贴以及协助完成单元格的排序等功能。
+
+3)UITableView 复用机制
+dequeueReusableCell方法的作用是从单元格对象池中获取指定类型并可复用的单元格对象。
+style参数: 枚举常量，用于表示单元格的样式。
+reuseIdentifier: 作为一个字符串类型的参数，它用来标识具有相同类型的、可复用的单元格。对于相同类型的单元格，需要使用相同的reuseIdentifier参数。
+
+4) 自定义UITableViewCell
+一般对于相对复杂一些的显示内容，我们会创建一个UITableViewCell的类文件。
+
+5) 添加索引和章节（Section）
+先来看一下索引需要用到的代理方法：
+
+numberOfSections(in tableView: UITableView)
+设置TableView中章节（Section的数量）不设置默认为1。
+
+tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
+在指定章节中，cell的个数。
+-tableView(_ tableView: UITableView, titleForHeaderInSection section: Int)
+设置章节标题文字，返回结果为字符串，如果返回为nil，则不显示标题。
+
+sectionIndexTitles(for tableView: UITableView)
+设置在表格右侧显示的索引序列的内容，返回结果为一个字符串数组
+
+tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
+TableViewCell初始化和复用
+
+6) cell的选择和取消选择
+UITableViewCellAccessoryType:
+
+none
+没有任何的样式
+
+detailButton
+右侧蓝色的圆圈，中间带叹号
+
+detailDisclosureButton
+右侧蓝色圆圈带叹号，它的右侧还有一个灰色向右的箭头
+
+disclosureIndicator
+右侧一个灰色的向右箭头
+
+checkmark
+右侧蓝色对号
+
+7) cell的插入和删除
+插入和删除设计到的两个代理方法：
+
+tableView(_ tableView:, editingStyleForRowAt indexPath:)
+确定编辑模式，Add or Delete
+
+tableView(_ tableView:, commit editingStyle:, forRowAt indexPath:)
+当执行编辑操作时，调用此方法
+
+和一个开启TableView编辑模式的方法：
+setEditing(_ editing:, animated:)
+editing: 是否开启编辑状态
+animated: 是否有动画效果
+
+8) cell位置移动功能
+移动功能同样设计到了两个代理方法：
+tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath)
+设置cell是否可移动
+
+tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
+每次移动结束后会调用此方法
+
+移动功能同样需要开启编辑模式setEditing(_: ,animated:)
+
+
+
+
+
+
