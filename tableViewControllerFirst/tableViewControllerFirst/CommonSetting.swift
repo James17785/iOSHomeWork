@@ -54,6 +54,7 @@ class CommonSetting: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let tableView = UITableView(frame: UIScreen.main.bounds, style: .grouped)
         self.title = "UserInfo"
         self.navigationItem.title = "UserInfo"

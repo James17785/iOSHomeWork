@@ -2,6 +2,7 @@
 1. Auto layout
  1) 不同设备同时预览, 按住option，然后按menu > Preview(1) > Main.storyboard (Preview)，就能打开用于预览的assistant editor。
  2) 用control+drag方法来添加spacing constraint。
+ 3) 图片适用png格式, 图片倍率@2x, @3x, 一般情况适用2倍图
 
 2. UITableView
 

@@ -21,7 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        // window?.rootViewController = TableView1()
         //window?.rootViewController = BookList()
         //window?.rootViewController = CellSelectAndDeselect()
-        window?.rootViewController = CommonSetting()
+        let uiview = CommonSetting()
+        let nav = UINavigationController.init(rootViewController: uiview)
+        
+        window?.rootViewController = nav
+        
         window?.backgroundColor = UIColor.white
         
         window?.makeKeyAndVisible()
