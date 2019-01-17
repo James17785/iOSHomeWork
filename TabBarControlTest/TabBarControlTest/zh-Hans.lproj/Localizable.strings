@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  TabBarControlTest
+
+  Created by TEAM on 17/1/2019.
+  Copyright © 2019 chinasoft. All rights reserved.
+*/
+"userInfo" = "用户信息";
+"done" = "完成";
+money = "钱包";
+save = "收藏";
+photo = "相册";
+emojo = "表情";
+setting = "设置";
+present = "等下";
+thirdTitle = "第三页";
+back = "返回";
+tabBar1 = "微信";
+tabBar2 = "发现";

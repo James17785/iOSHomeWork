@@ -107,11 +107,145 @@ tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath)
 
 tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath)
 每次移动结束后会调用此方法
-
 移动功能同样需要开启编辑模式setEditing(_: ,animated:)
 
+3. UIScrollView
+1) 创建UIScrollView
+let scrollView = UIScrollView(frame: view.bounds)
 
+2) 为UIScrollView添加内容
+3) UIScrollViewDelegate
+4) UIPageControl
 
+4. UIViewController
+主要作用：在一个复杂的iOS应用中， 往往包含多个屏幕的内容，使用UIViewController可以方便管理众多的内容。
+1) 视图控制器的生命周期：
+alloc      
+创建一个视图控制器对象，并分配内存空间。
 
+init()
+对视图控制器对象进行初始化。
+
+loadView
+如果从storyboard创建视图，则从storyboard中加载视图。
+
+viewDidLoad
+视图加入完成，可以进行一些自定义操作
+
+viewWillAppear
+视图即将要展示在屏幕上
+
+viewDidAppear
+视图已经站在屏幕上显示并完成渲染。
+
+viewWillLayoutSubviews
+视图即将布局其子视图
+
+viewDidLayoutSubviews
+视图已经完成子视图的布局
+
+viewWillDisappear
+视图即将从屏幕中消失
+
+viewDidDisappear
+视图已经从屏幕上消失
+
+dealloc
+视图被销毁
+
+2) 创建一个UIViewController
+UIViewController的职责是：对内管理与之关联的UIView，对外跟其他UIViewController通信和协调。
+跳转 
+	navigationController?.pushViewController(ViewController(), animated: true)
+    // 另一种跳转方式
+    present(ViewController(), animated: true, completion: nil)
+back
+		navigationController?.popViewController(animated: true)
+        // 另一种跳转方式 成对出现
+        dismiss(animated: true, completion: nil)
+
+5. UITabBarController
+1) 创建一个UIViewController
+2) 实现UITabBarController
+	let tabBarController = UITabBarController()
+    // tabBarController的主题颜色
+    tabBarController.tabBar.tintColor = UIColor.init(colorLiteralRed: 9/255.0, green: 187/255.0, blue: 7/255.0, alpha: 1)
+    // tabBarController的子视图控制器集合
+    tabBarController.viewControllers = [wechat,addressBook,find,mine]
+    // 添加到rootViewController
+    window?.rootViewController = tabBarController
+
+我们可以去掉状态栏:
+在General中有一个Hide status bar的单选框，勾选，info.plist中会新增一条Status bar is initially hidden ,然后在下面再添加一条View controller-based status bar appearance，就可以了，这个是有自动补全的，所以不用担心拼错。然后再跑一下项目看一下，没有状态栏了。
+
+3) 修改UITabBarController的索引
+在使用TabBarController时，一般打开APP会默认呈现的是第一个Tab的viewController
+tabBarController.selectedIndex = 2 //索引是从0开始
+
+4) Tab图标上方显示角标
+当项目收到推送时，app的icon上面会出现小红点，并且数字会+1，在项目里，只要设置子视图控制器的tabBarItem的badgeValue属性就可以了：
+ wechat.tabBarItem.badgeValue = "10"
+
+6. UINavigationController
+1) UINavigationController导航条控制器用于显示多屏并具有一定层次结构的内容，是构建分层应用的主要工具。
+2) 创建一个UINavigationController
+window?.rootViewController = UINavigationController(rootViewController: FirstViewController())
+3) 导航栏的显示和隐藏
+我们可以在viewWillAppear()中设置视图控制器的navigationController的navigationBarHidden属性来设置导航栏的隐藏和显示。
+override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+a. navigationBarHidden ()方法有两个参数，第一个参数表示是否隐藏导航栏，第二个属性表示是否需要动画效果。
+4) 导航栏样式
+		// 添加导航条上方的提示，这个属性被设置后，导航栏的高度将增加到74
+        navigationItem.prompt = "正在使用您的位置..."
+        // 设置导航栏不透明
+        navigationController?.navigationBar.isTranslucent = false
+        // 设置导航条样式
+        navigationController?.navigationBar.barStyle = UIBarStyle.black
+        // 设置导航栏关键元素颜色，tintColor属性是View专门用来指定所包含的关键元素的颜色
+        navigationController?.navigationBar.tintColor = UIColor.white
+        // 设置导航栏背景图片
+        navigationController?.navigationBar.setBackgroundImage(UIImage(named:""), for: .any, barMetrics: .default)
+        
+        // 设置导航栏 title 的 Font
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName:UIFont.boldSystemFont(ofSize: 18)]
+        // 设置导航栏 title 的 Color
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        
+        // 设置导航栏阴影部分图片，也就是导航栏下面那条细线
+        navigationController?.navigationBar.shadowImage = UIImage(named:"")
+        // 设置导航栏阴影颜色
+        navigationController?.navigationBar.layer.shadowColor = UIColor.green.cgColor
+        // 设置导航栏阴影偏移
+        navigationController?.navigationBar.layer.shadowOffset = CGSize(width: 0, height: 10)
+        // 设置导航栏阴影透明度
+        navigationController?.navigationBar.layer.shadowOpacity = 0.2
+
+5) 导航控制器和标签控制器
+
+7. 国际化
+如果项目已经完成开发,替换全局字符串为国际化宏 
+Command+Shift+F，进入全局搜索引擎，切换为Replace模式，并把匹配模式改为Regular Expression。
+
+Swift，请去掉@
+@"[^"]*[\u4E00-\u9FA5]+[^"\n]*?"
+
+生成多语言文件
+首先，我们需要先新建所需语言的文件夹。
+cd 工程目录
+mkdir en.lproj
+mkdir zh-Hans.lproj
+
+然后，遍历所有.m文件，根据每个文件内的需要国际化的字符串生成key和value。
+find . -name *.m | xargs genstrings -o en.lproj
+find . -name *.m | xargs genstrings -o zh-Hans.lproj
+
+此时，en.lproj和zh-Hans.lproj文件夹中就应该有了相应的Localizable.string文件了。
+我们把这两个文件夹拖到工程里，然后在相应的Localizable.strings文件中，修改每个key所对应的value值就行了
+
+应用名字本地化, 在 InfoPlist.strings 中加入如下代码:
+CFBundleDisplayName = "第二课";
 
 

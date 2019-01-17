@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  TabBarControlTest
+
+  Copyright © 2019 chinasoft. All rights reserved.
+*/
+userInfo = "UserInfo";
+done = "Done";
+money = "Money";
+save = "Save";
+photo = "Photo";
+emojo = "Emojo";
+setting = "Setting";
+present = "Present";
+thirdTitle = "Third Page";
+back = "Back";
+tabBar1 = "weChat";
+tabBar2 = "Find";
