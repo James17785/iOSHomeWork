@@ -18,12 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let settingPage = CommonSetting()
-        settingPage.tabBarItem.image = UIImage(named: "weixin")
-        settingPage.tabBarItem.selectedImage = UIImage(named: "selectWeixin")
+        settingPage.tabBarItem.image = UIImage(named: "weixin")?.withRenderingMode(.alwaysOriginal)
+        settingPage.tabBarItem.selectedImage = UIImage(named: "selectWeixin")?.withRenderingMode(.alwaysOriginal)
         settingPage.title = NSLocalizedString("tabBar1", comment: "")
+        settingPage.tabBarItem.badgeValue = "5"
         
         let secondPage = SecondViewController()
-        secondPage.tabBarItem.image = UIImage(named: "Find")
+        secondPage.tabBarItem.image = UIImage(named: "Find")?.withRenderingMode(.alwaysOriginal)
         secondPage.title = NSLocalizedString("tabBar2", comment: "")
         
         let navigationContro1 = UINavigationController(rootViewController: settingPage)
