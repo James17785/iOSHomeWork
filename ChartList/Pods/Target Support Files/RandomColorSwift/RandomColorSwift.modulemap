@@ -1,0 +1,6 @@
+module RandomColorSwift {
+  umbrella header "RandomColorSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

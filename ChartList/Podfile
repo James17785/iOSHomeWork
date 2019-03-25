@@ -1,0 +1,15 @@
+
+
+target 'ChartList' do
+pod  'SwiftRandom'
+  pod 'Alamofire'
+  pod 'OHHTTPStubs/Swift'
+  pod 'Moya'
+  pod 'HandyJSON'
+  pod 'SnapKit'
+  pod 'UIColor_Hex_Swift'
+  pod 'Kingfisher'
+  pod 'Toast-Swift'
+  pod 'RandomColorSwift'
+  pod 'SwiftyJSON'
+end

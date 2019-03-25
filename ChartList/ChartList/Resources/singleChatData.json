@@ -1,0 +1,50 @@
+
+{
+    "response":{
+        "status":"200",
+        "messageList":[
+            {
+                "nameID":"Jerry001",
+                "messageType":"message",
+                "recentMsg":"You can't catchy me! haha~~~~~~~~~~~~~~~~~~~~~~",
+                "isInWards":true,
+                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
+            },
+            {
+                "nameID":"Jerry001",
+                "messageType":"message",
+                "recentMsg":"有阳光就灿烂",
+                "isInWards":true,
+                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
+            },
+            {
+                "nameID":"me001",
+                "messageType":"message",
+                "recentMsg":"兰陵美酒郁金香",
+                "isInWards":false,
+                "avatarUrl":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1158048268,1362266802&fm=27&gp=0.jpg"
+            },
+            {
+                "nameID":"Jerry001",
+                "messageType":"message",
+                "recentMsg":"You can't catchy me!",
+                "isInWards":true,
+                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
+            },
+            {
+                "nameID":"me001",
+                "messageType":"message",
+                "recentMsg":"Hello",
+                "isInWards":false,
+                "avatarUrl":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1158048268,1362266802&fm=27&gp=0.jpg"
+            },
+            {
+                "nameID":"Jerry001",
+                "messageType":"image",
+                "recentMsg":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg",
+                "isInWards":true,
+                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
+            },
+        ]
+    }
+}

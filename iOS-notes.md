@@ -1,9 +1,28 @@
 ///Swift
-1. Auto layout
+1. Auto layout, 自动布局包括xib stotrybaord 和代码布局
+storyboard
  1) 不同设备同时预览, 按住option，然后按menu > Preview(1) > Main.storyboard (Preview)，就能打开用于预览的assistant editor。
  2) 用control+drag方法来添加spacing constraint。
  3) 图片适用png格式, 图片倍率@2x, @3x, 一般情况适用2倍图
  4) 多个视图在一起不方便选择时，可以用 shift + 右击
+ 
+ 代码布局
+ 代码布局一般会引用第三方库CocoaPods
+ 1) CocoaPods 安装 : https://www.cnblogs.com/YangFuShun/p/7976811.html
+ 2) CocoaPods使用:
+ 在工程中创建一个Podfile文件: touch Podfile
+ 使用vim编辑Podfile文件: vim Podfile --> i, e.g.
+         platform :ios, '7.0'
+         target 'MyApp' do
+         pod 'AFNetworking', '~> 3.1.0'
+         end
+ 编辑完成后先按左上角的esc键，再按：键，再输入wq，点击回车，就保存并退出去了
+ 终端输入：$ pod install
+ 使用的时候引入: import SnapKit
+3) 更新约束的时候
+makeConstraints和updateConstraints两者的本质区别：makeConstraints是制作约束，在原来的基础上再添加另外的约束，updateConstraints是更新约束，改变原有约束，约束不会增加，没经过updateConstraints处理的保持原有约束，经过处理就更新约束，约束不会减少，snapkit不会产生警告
+4) 重做约束（remakeConstraints）
+之前所有的约束条件将不再起作用,要重新添加
 
 2. UITableView
 
@@ -312,6 +331,12 @@ Dynamic Type当在手机设置 >通用 > 辅助功能 > 更大字体设置字体
 
 9. 开始用Swift开发iOS 10 - 14 基础动画，模糊效果和Unwind Segue
 
+10. 数据存储
+NSKeyedArchiver: 归档(NSCoding)序列化
+NSUserDefaults: 用来保存应用程序设置和属性, 用户保存的数据
+NSFileManager: write的方式直接写入磁盘
+SQLite: 采用SQLite数据库来存储数据
+
 
 
 999. Common
@@ -320,12 +345,25 @@ Dynamic Type当在手机设置 >通用 > 辅助功能 > 更大字体设置字体
 
 
 
+yellow file, 参与编译
+bule folder, 工程文件,
+
+一些常用的第三方库:
+pod  'SwiftRandom'
+pod 'Alamofire'
+pod 'OHHTTPStubs/Swift'
+pod 'Moya/RxSwift'
+pod 'HandyJSON'
+pod 'SnapKit'
+pod 'UIColor_Hex_Swift'
+pod 'Kingfisher'        图片库
+pod 'Toast-Swift'       loading icon
+pod 'XCGLogger'     log 文件, 打印日志调试
+pod 'RandomColorSwift'      
+pod 'SwiftyJSON'
 
 
-
-
-
-
+raml
 
 
 
@@ -347,6 +385,12 @@ origin API for constraints
 collectionView
 
 
+流程图 OmniGraffle
+时序图 StarUML
+dummy json,  PlistEdit Pro
+
+
+CocoalPods 安装
 
 
 

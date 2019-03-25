@@ -1,0 +1,42 @@
+{
+    "response":{
+        "status":"200",
+        "chatList":[
+            {
+                "nickName":"Jerry",
+                "recentMsg":"You can't catchy me!",
+                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
+            },
+            {
+                "nickName":"Tom",
+                "recentMsg":"You wait!",
+                "avatarUrl":"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2245612340,853442449&fm=27&gp=0.jpg"
+            },
+            {
+                "nickName":"Jerry son",
+                "recentMsg":"You can't catchy me!",
+                "avatarUrl":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=757508699,3623102967&fm=27&gp=0.jpg"
+            },
+            {
+                "nickName":"Hostess",
+                "recentMsg":"Go out!",
+                "avatarUrl":"https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=676996424,2900928952&fm=27&gp=0.jpg"
+            },
+            {
+                "nickName":"Dog",
+                "recentMsg":"Don't bully my buddy!",
+                "avatarUrl":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2303550390,3222189618&fm=27&gp=0.jpg"
+            },
+            {
+                "nickName":"阳光男孩",
+                "recentMsg":"有阳光就灿烂",
+                "avatarUrl":"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=690339224,3448202814&fm=27&gp=0.jpg"
+            },
+            {
+                "nickName":"西域女神",
+                "recentMsg":"兰陵美酒郁金香",
+                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
+            }
+        ]
+    }
+}
