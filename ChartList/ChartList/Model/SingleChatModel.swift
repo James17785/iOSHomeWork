@@ -10,17 +10,17 @@ import Foundation
 import SwiftyJSON
 
 struct SingleChatModel {
-    var nameID:String?
-    var recentMsg:String?
-    var isInWards:Bool?
+    var imageUrl:String?
+    var message:String?
+    var role:String?
     var avatarUrl:String?
     var messageType:String?
     
     
     init(jsonData:JSON){
-        self.nameID = jsonData["nameID"].stringValue
-        self.recentMsg = jsonData["recentMsg"].stringValue
-        self.isInWards = jsonData["isInWards"].boolValue
+        self.imageUrl = jsonData["imageUrl"].stringValue
+        self.message = jsonData["message"].stringValue
+        self.role = jsonData["role"].stringValue
         self.avatarUrl = jsonData["avatarUrl"].stringValue
         self.messageType = jsonData["messageType"].stringValue
         

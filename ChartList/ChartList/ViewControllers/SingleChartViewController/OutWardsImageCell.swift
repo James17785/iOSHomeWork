@@ -1,14 +1,11 @@
 
-
 import UIKit
 import SnapKit
 import RandomColorSwift
 import Kingfisher
 
-class OutwardsChartTableViewCell: ChatModelTableViewCell {
-
-
-    let recentMessageLabel = UILabel(frame: .zero)
+class OutwardsImageViewCell: ChatModelTableViewCell {
+    let messgeImg = UIImageView(frame:.zero)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,19 +23,27 @@ class OutwardsChartTableViewCell: ChatModelTableViewCell {
             make.top.equalTo(AppConstraint.Common.leftSpace)
             make.bottom.equalToSuperview().offset(-AppConstraint.Common.leftSpace)
             make.right.equalTo(-AppConstraint.Common.leftSpace)
-            make.height.equalTo(AppConstraint.Common.avatarHeight)
+            make.height.equalTo(100)
             make.width.equalTo(AppConstraint.Common.avatarWidth)
         }
-        self.contentView.addSubview(recentMessageLabel)
-        recentMessageLabel.numberOfLines = 0
-        recentMessageLabel.textAlignment = .right
-        recentMessageLabel.snp.makeConstraints { (make) in make.top.equalTo(avatarImageView).offset(AppConstraint.SingleChat.messageTopSpace)
+
+        
+        self.contentView.addSubview(messgeImg)
+        messgeImg.snp.makeConstraints { (make) in //make.top.equalTo(avatarImageView).offset(AppConstraint.SingleChat.messageTopSpace)
+            //make.left.equalTo(AppConstraint.Common.avatarWidth)
+            // make.height.equalTo(AppConstraint.SingleChat.imageHeight)
+            // make.width.equalTo(AppConstraint.SingleChat.imageWidth)
+            
+            make.top.equalTo(avatarImageView).offset(AppConstraint.SingleChat.messageTopSpace)
+            make.left.equalTo(AppConstraint.Common.avatarWidth)
             make.right.equalTo(avatarImageView.snp.left).offset(-AppConstraint.Common.leftSpace)
-            make.left.equalToSuperview().offset(AppConstraint.Common.avatarWidth)
-            
-            
+            make.height.equalTo(AppConstraint.SingleChat.imageHeight)
+            make.width.equalTo(AppConstraint.SingleChat.imageWidth)
+            make.bottom.equalToSuperview().offset(-AppConstraint.Common.leftSpace)
         }
-          
+        
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,6 +57,6 @@ class OutwardsChartTableViewCell: ChatModelTableViewCell {
     }
     
     
-
-
+    
+    
 }

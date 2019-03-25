@@ -1,10 +1,3 @@
-//
-//  SingleChartViewController.swift
-//  ChartList
-//
-//  Created by VAM TEAM on 20/3/2019.
-//  Copyright © 2019 chinasoft. All rights reserved.
-//
 
 import UIKit
 import SnapKit
@@ -22,9 +15,10 @@ class SingleChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.title = "Chat"
+        
+        
         self.networkRequest()
     }
-
     
     //MARK: - Register cell
     func addTableview() {
@@ -33,10 +27,12 @@ class SingleChartViewController: UIViewController {
         tableView.delegate = self
         tableView.register(SingleChartTableViewCell.self, forCellReuseIdentifier: "SingleChatInCell")
         tableView.register(OutwardsChartTableViewCell.self, forCellReuseIdentifier: "SingleChatOutCell")
+        tableView.register(SingleChartTableViewCell.self, forCellReuseIdentifier: "SingleChatInImageCell")
+        tableView.register(OutwardsChartTableViewCell.self, forCellReuseIdentifier: "SingleChatOutImageCell")
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-//        tableView.estimatedRowHeight = 44 ;
+        //tableView.estimatedRowHeight = 44 ;
         tableView.rowHeight = UITableView.automaticDimension;
         
         tableView.backgroundColor = .white
@@ -77,39 +73,49 @@ extension SingleChartViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:ChatModelTableViewCell
+        let cell1 = tableView.dequeueReusableCell(withIdentifier: "SingleChatInCell") as! ChatModelTableViewCell
         let item = self.messageList[indexPath.row]
         let singleChatMode = SingleChatModel(jsonData: item)
-        
-        if singleChatMode.isInWards ?? true {
-            cell = tableView.dequeueReusableCell(withIdentifier: "SingleChatInCell") as! SingleChartTableViewCell
-        }else{
-            cell = tableView.dequeueReusableCell(withIdentifier: "SingleChatOutCell") as! OutwardsChartTableViewCell
-        }
-        
         let url = URL(string: singleChatMode.avatarUrl!)
-        cell.avatarImageView.kf.setImage(with: url)
         
-        cell.messageType = singleChatMode.messageType ?? "message"
+         cell1.avatarImageView.kf.setImage(with: url)
         
-        switch singleChatMode.messageType {
-        case "message":
-            cell.recentMessageLabel.text = singleChatMode.recentMsg
-            break
-        case "image":
-            let url = URL(string: singleChatMode.recentMsg!)
-            cell.messgeImg.kf.setImage(with: url)
+        if singleChatMode.role == "receiver", singleChatMode.messageType == "text" {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "SingleChatInCell") as! SingleChartTableViewCell
+            cell.recentMessageLabel.text = singleChatMode.message
+            cell.avatarImageView.kf.setImage(with: url)
             
-        default:
-            break
+            return cell
+        }else if singleChatMode.role == "sender", singleChatMode.messageType == "text" {
+           let cell = tableView.dequeueReusableCell(withIdentifier: "SingleChatOutCell") as! OutwardsChartTableViewCell
+            cell.recentMessageLabel.text = singleChatMode.message
+            cell.avatarImageView.kf.setImage(with: url)
+            
+            return cell
+        }else if singleChatMode.role == "receiver", singleChatMode.messageType == "image" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SingleChatInImageCell") as! OutwardsImageViewCell
+            let url = URL(string: singleChatMode.imageUrl!)
+            cell.messgeImg.kf.setImage(with: url)
+            cell.avatarImageView.kf.setImage(with: url)
+            
+            return cell
+        }else if singleChatMode.role == "sender", singleChatMode.messageType == "image" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SingleChatOutImageCell") as! InWardsImageCell
+            let url = URL(string: singleChatMode.imageUrl!)
+            cell.messgeImg.kf.setImage(with: url)
+            cell.avatarImageView.kf.setImage(with: url)
+            
+            return cell
         }
+        
+        
         
 //        let url = URL(string: "http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg")
 //        cell.avatarImageView.kf.setImage(with: url)
 //        cell.recentMessageLabel.text = Randoms.randomFakeNameAndEnglishHonorific()
 
         
-        return cell
+        return cell1
     }
     
 

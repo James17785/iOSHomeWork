@@ -21,9 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         uiViewController.tabBarItem.title = "设置"
         uiViewController.tabBarItem.image = UIImage(named: "weixin")
         
-        let nav = UINavigationController(rootViewController: charListViewController)
-//        let tabBarController = UITabBarController()
-//        tabBarController.viewControllers = [nav,uiViewController]
+        let loginViewController = LoginViewController()
+
+        
+        let nav = UINavigationController(rootViewController: loginViewController)
+        let nav1 = UINavigationController(rootViewController: charListViewController)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [nav1,uiViewController]
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

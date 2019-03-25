@@ -1,10 +1,4 @@
-//
-//  ChatModelTableViewCell.swift
-//  ChartList
-//
-//  Created by VAM TEAM on 20/3/2019.
-//  Copyright © 2019 chinasoft. All rights reserved.
-//
+
 
 import UIKit
 
@@ -12,9 +6,9 @@ class ChatModelTableViewCell: UITableViewCell {
 
     let avatarImageView = UIImageView(frame: .zero)
     let nickNameLabel = UILabel(frame: .zero)
-    let recentMessageLabel = UILabel(frame: .zero)
-    var messageType:String = ""
-    let messgeImg = UIImageView(frame:.zero)
+
+    var messageType:String?
+    
     
     
     override func awakeFromNib() {

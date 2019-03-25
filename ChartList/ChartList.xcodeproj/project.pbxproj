@@ -10,6 +10,9 @@
 		2C042D168DBF608603032D4D /* libPods-ChartList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A51C6E48F9408D9F0C6BE359 /* libPods-ChartList.a */; };
 		EF07675F2246031300F91439 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF07675E2246031300F91439 /* Service.swift */; };
 		EF0767612246077900F91439 /* serviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0767602246077900F91439 /* serviceProtocol.swift */; };
+		EF0767642246520900F91439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0767632246520900F91439 /* LoginViewController.swift */; };
+		EF0767842246947300F91439 /* OutWardsImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0767832246947300F91439 /* OutWardsImageCell.swift */; };
+		EF0767862246968A00F91439 /* InWardsImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0767852246968A00F91439 /* InWardsImageCell.swift */; };
 		EF36C862221CF1DF00F47BD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF36C861221CF1DF00F47BD7 /* AppDelegate.swift */; };
 		EF36C867221CF1DF00F47BD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF36C865221CF1DF00F47BD7 /* Main.storyboard */; };
 		EF36C869221CF1E000F47BD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF36C868221CF1E000F47BD7 /* Assets.xcassets */; };
@@ -33,6 +36,9 @@
 		C981937B06D3E9C8E5E7D13E /* Pods-ChartList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChartList.debug.xcconfig"; path = "Target Support Files/Pods-ChartList/Pods-ChartList.debug.xcconfig"; sourceTree = "<group>"; };
 		EF07675E2246031300F91439 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		EF0767602246077900F91439 /* serviceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serviceProtocol.swift; sourceTree = "<group>"; };
+		EF0767632246520900F91439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EF0767832246947300F91439 /* OutWardsImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutWardsImageCell.swift; sourceTree = "<group>"; };
+		EF0767852246968A00F91439 /* InWardsImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InWardsImageCell.swift; sourceTree = "<group>"; };
 		EF36C85E221CF1DF00F47BD7 /* ChartList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChartList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF36C861221CF1DF00F47BD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF36C866221CF1DF00F47BD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +85,14 @@
 				37ACB6BEED7926C29A335902 /* Pods-ChartList.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EF076762224651B400F91439 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EF0767632246520900F91439 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 		EF36C855221CF1DF00F47BD7 = {
@@ -153,6 +167,7 @@
 		EF36C877221CF6B900F47BD7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EF076762224651B400F91439 /* LoginViewController */,
 				EF39B5122242294C00BE6551 /* SingleChartViewController */,
 				EF36C878221CF6DF00F47BD7 /* ChartListViewController */,
 			);
@@ -173,8 +188,10 @@
 			children = (
 				EF39B51322422B7100BE6551 /* SingleChartViewController.swift */,
 				EF39B5172242444300BE6551 /* OutwardsChartTableViewCell.swift */,
+				EF0767832246947300F91439 /* OutWardsImageCell.swift */,
 				EF39B5192242495C00BE6551 /* ChatModelTableViewCell.swift */,
 				EF39B515224230E200BE6551 /* SingleChartTableViewCell.swift */,
+				EF0767852246968A00F91439 /* InWardsImageCell.swift */,
 			);
 			path = SingleChartViewController;
 			sourceTree = "<group>";
@@ -289,6 +306,7 @@
 			files = (
 				EF36C87E221D09C700F47BD7 /* AppConstraintConfig.swift in Sources */,
 				EF39B5212243EC1200BE6551 /* SingleChatModel.swift in Sources */,
+				EF0767862246968A00F91439 /* InWardsImageCell.swift in Sources */,
 				EF39B5182242444400BE6551 /* OutwardsChartTableViewCell.swift in Sources */,
 				EF0767612246077900F91439 /* serviceProtocol.swift in Sources */,
 				EF36C87C221D06C900F47BD7 /* ChartListCellTableViewCell.swift in Sources */,
@@ -298,6 +316,8 @@
 				EF36C862221CF1DF00F47BD7 /* AppDelegate.swift in Sources */,
 				EF07675F2246031300F91439 /* Service.swift in Sources */,
 				EF36C87A221CF79300F47BD7 /* ChartListViewController.swift in Sources */,
+				EF0767642246520900F91439 /* LoginViewController.swift in Sources */,
+				EF0767842246947300F91439 /* OutWardsImageCell.swift in Sources */,
 				EF39B51422422B7100BE6551 /* SingleChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

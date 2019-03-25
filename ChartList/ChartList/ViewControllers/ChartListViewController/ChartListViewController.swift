@@ -18,16 +18,22 @@ class ChartListViewController: UIViewController {
     let tableView = UITableView(frame: .zero, style: .plain)
     let singleChatView = SingleChartViewController()
     var chatList:JSON = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.title = "微信"
-        self.tabBarItem.image = UIImage(named: "selectWeixin")
+//        self.tabBarItem.image = UIImage(named: "selectWeixin")
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self , action: nil)
+        self.navigationController?.navigationItem.setLeftBarButton(nil, animated: true)
         self.networkRequest()
         
 //        Service.networkRequest("chatlistData", chatListCallback, errorHandle)
         // Do any additional setup after loading the view.
     }
+
     
     
     //MARK: - Register cell
@@ -41,12 +47,6 @@ class ChartListViewController: UIViewController {
         }
         tableView.backgroundColor = .white
         tableView.tableFooterView = UIView()
-    }
-    func chatListCallback(){
-        
-    }
-    func errorHandle(){
-        
     }
     
     func networkRequest(){

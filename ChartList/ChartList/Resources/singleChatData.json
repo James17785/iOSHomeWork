@@ -1,50 +1,60 @@
-
 {
     "response":{
         "status":"200",
-        "messageList":[
-            {
-                "nameID":"Jerry001",
-                "messageType":"message",
-                "recentMsg":"You can't catchy me! haha~~~~~~~~~~~~~~~~~~~~~~",
-                "isInWards":true,
-                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
-            },
-            {
-                "nameID":"Jerry001",
-                "messageType":"message",
-                "recentMsg":"有阳光就灿烂",
-                "isInWards":true,
-                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
-            },
-            {
-                "nameID":"me001",
-                "messageType":"message",
-                "recentMsg":"兰陵美酒郁金香",
-                "isInWards":false,
-                "avatarUrl":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1158048268,1362266802&fm=27&gp=0.jpg"
-            },
-            {
-                "nameID":"Jerry001",
-                "messageType":"message",
-                "recentMsg":"You can't catchy me!",
-                "isInWards":true,
-                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
-            },
-            {
-                "nameID":"me001",
-                "messageType":"message",
-                "recentMsg":"Hello",
-                "isInWards":false,
-                "avatarUrl":"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1158048268,1362266802&fm=27&gp=0.jpg"
-            },
-            {
-                "nameID":"Jerry001",
-                "messageType":"image",
-                "recentMsg":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg",
-                "isInWards":true,
-                "avatarUrl":"http://mvimg2.meitudata.com/55fe3d94efbc12843.jpg"
-            },
-        ]
+        "messageList":[{
+            "message": "同样详细的原理可以查阅其他资料，这里只介绍一下实现中使用的基本数据结构。",
+            "messageType": "text",
+            "imageUrl": "",
+            "role": "sender",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551244283067&di=50d26d10e1282bc703a5b9457c879235&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201410%2F02%2F20141002212239_zWR55.jpeg"
+        }, {
+            "message": "weak的最大特点就是在对象销毁的时候",
+            "imageUrl": "",
+            "messageType": "text",
+            "role": "receiver",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551840338&di=0d7328b9ea157e3aa877e95984135549&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201812%2F05%2F20181205211932_xvslr.jpeg"
+        }, {
+            "message": "清醒时做事，糊涂时读书，大怒时睡觉，独处时思考;做一个幸福的人，读书，旅行，努力工作，关心身体和心情，成为最好的自己",
+            "imageUrl": "",
+            "messageType": "text",
+            "role": "sender",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551244283067&di=50d26d10e1282bc703a5b9457c879235&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201410%2F02%2F20141002212239_zWR55.jpeg"
+        }, {
+            "message": "详细的原理可以查阅其他资料，这里只介绍一下实现中使用的基本数据结构。关联对象采用的是HashMap嵌套HashMap的结构存储数据的",
+            "imageUrl": "",
+            "messageType": "text",
+            "role": "receiver",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551840338&di=0d7328b9ea157e3aa877e95984135549&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201812%2F05%2F20181205211932_xvslr.jpeg"
+        }, {
+            "message": "11",
+            "imageUrl": "https://t7.baidu.com/it/u=2675801298,2422093698&fm=191&app=48&size=h300&n=0&g=4n&f=JPEG?sec=1853310920&t=ba4892ea3768fc6a9ef7befa0461bd60",
+            "messageType": "text",
+            "role": "sender",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551244283067&di=50d26d10e1282bc703a5b9457c879235&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201410%2F02%2F20141002212239_zWR55.jpeg"
+        }, {
+            "message": "真正的朋友，必定如酒酿，历经岁月窖藏，一定愈发弥坚醇香。",
+            "imageUrl": "",
+            "messageType": "text",
+            "role": "sender",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551244283067&di=50d26d10e1282bc703a5b9457c879235&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201410%2F02%2F20141002212239_zWR55.jpeg"
+        }, {
+            "message": "222",
+            "imageUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551245877354&di=862f41ac0b852fcc496c27d51b49813a&imgtype=0&src=http%3A%2F%2Fsjbz.fd.zol-img.com.cn%2Ft_s208x312c%2Fg5%2FM00%2F08%2F08%2FChMkJljoq5aIDSbpAAnREUPTGcEAAbeOgE7CRoACdEp450.jpg",
+            "messageType": "text",
+            "role": "sender",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551244283067&di=50d26d10e1282bc703a5b9457c879235&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201410%2F02%2F20141002212239_zWR55.jpeg"
+        }, {
+            "message": "真正的朋友，他一定理解你的诚挚和率真。哂笑并欣赏你不算计、无公害的赤子心。深谙你急躁率性的脾气中深藏而不为人知的敏感与善良。",
+            "imageUrl": "",
+            "messageType": "text",
+            "role": "receiver",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551840338&di=0d7328b9ea157e3aa877e95984135549&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201812%2F05%2F20181205211932_xvslr.jpeg"
+        }, {
+            "message": "真正的朋友，还会交魂，所谓的神交。生生世世，脉脉不息，如高山流水，阳春白雪，可以穿越时间与空间，在岁月的长河隧道，彪炳历史，广为流传，如司马迁与郭沫若，藤子京与范仲淹……",
+            "imageUrl": "",
+            "messageType": "text",
+            "role": "sender",
+            "avatarUrl": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1551244283067&di=50d26d10e1282bc703a5b9457c879235&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201410%2F02%2F20141002212239_zWR55.jpeg"
+        }]
     }
 }

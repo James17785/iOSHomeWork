@@ -1,10 +1,4 @@
-//
-//  SingleChartTableViewCell.swift
-//  ChartList
-//
-//  Created by VAM TEAM on 20/3/2019.
-//  Copyright © 2019 chinasoft. All rights reserved.
-//
+
 
 import UIKit
 import SnapKit
@@ -13,9 +7,7 @@ import Kingfisher
 
 class SingleChartTableViewCell: ChatModelTableViewCell {
 
-//    let avatarImageView = UIImageView(frame: .zero)
-//    let nickNameLabel = UILabel(frame: .zero)
-//    let recentMessageLabel = UILabel(frame: .zero)
+    let recentMessageLabel = UILabel(frame: .zero)
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,12 +24,11 @@ class SingleChartTableViewCell: ChatModelTableViewCell {
         avatarImageView.snp.makeConstraints { (make) in
             make.top.left.equalTo(AppConstraint.Common.leftSpace)
             make.bottom.equalToSuperview().offset(-AppConstraint.Common.leftSpace)
-            make.width.height.equalTo(AppConstraint.Common.avatarWidth)
-//            make.width.equalTo(AppConstraint.Common.avatarWidth)
+            make.height.equalTo(AppConstraint.Common.avatarHeight)
+            make.width.equalTo(AppConstraint.Common.avatarWidth)
 
 
         }
-        
         
         self.contentView.addSubview(recentMessageLabel)
         recentMessageLabel.numberOfLines = 0
@@ -45,24 +36,6 @@ class SingleChartTableViewCell: ChatModelTableViewCell {
         recentMessageLabel.snp.makeConstraints { (make) in make.top.equalTo(avatarImageView).offset(AppConstraint.SingleChat.messageTopSpace)
             make.right.equalToSuperview().offset(-AppConstraint.SingleChat.messageRightSpace)
             make.left.equalTo(avatarImageView.snp.right).offset(AppConstraint.Common.leftSpace)
-            
-        }
-        self.contentView.addSubview(messgeImg)
-        messgeImg.snp.makeConstraints { (make) in make.top.equalTo(avatarImageView).offset(AppConstraint.SingleChat.messageTopSpace)
-            make.right.equalToSuperview().offset(-AppConstraint.SingleChat.messageRightSpace)
-            make.left.equalTo(avatarImageView.snp.right).offset(AppConstraint.Common.leftSpace)
-            make.height.equalTo(AppConstraint.SingleChat.imageHeight)
-            make.width.equalTo(AppConstraint.SingleChat.imageWidth)
-        }
-        switch messageType {
-            case "message":
-
-                break
-            case "image":
-
-                break
-            default:
-                break
             
         }
         

@@ -13,8 +13,8 @@ import UIKit
 struct AppConstraint {
     struct Common {
         static let leftSpace: CGFloat = 15
-        static let avatarWidth: CGFloat = 48
-        static let avatarHeight: CGFloat = 48
+        static let avatarWidth: CGFloat = 55
+        static let avatarHeight: CGFloat = 55
         
         static let cornerRadius: CGFloat = 8
     }
@@ -25,8 +25,13 @@ struct AppConstraint {
     struct SingleChat {
         static let messageTopSpace:CGFloat = 4
         static let messageRightSpace:CGFloat = 63
-        static let imageHeight:CGFloat = 200
-        static let imageWidth:CGFloat = 200
-        
+        static let imageHeight:CGFloat = 180
+        static let imageWidth:CGFloat = 120
+    }
+    struct Login {
+        static let topSpace: CGFloat = 100
+        static let leftSpace: CGFloat = 15
+        static let labelWidth: CGFloat = 100
+        static let labelHeight: CGFloat = 20
     }
 }
