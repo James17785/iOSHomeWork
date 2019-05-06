@@ -337,7 +337,23 @@ NSUserDefaults: 用来保存应用程序设置和属性, 用户保存的数据
 NSFileManager: write的方式直接写入磁盘
 SQLite: 采用SQLite数据库来存储数据
 
+11. WKWebView
+网络请求中,httpheadr 主要用于存储cookie 的信息, httpbody 主要用于传输用户提交的数据
+一些常用属性方法
+(1)loadRequest()  加载请求
+(2)goBack()  网页后退
+(3)goForward()  网页前进
+(4)reload()  网页重新加载
+(5)stopLoading()  网页停止加载
+(6)title  网页标题
+(7)canGoBack  网页是否能够后退
+(8)canGoForward  网页是否能够前进
+(9)estimatedProgress  网页加载中当前的进度
 
+一般还要搭配使用到WKUIDelegate和WKNavigationDelegate
+
+12. iOS应用架构
+https://casatwy.com/iosying-yong-jia-gou-tan-kai-pian.html
 
 999. Common
 （control+⌘+space）表情 
@@ -391,6 +407,13 @@ dummy json,  PlistEdit Pro
 
 
 CocoalPods 安装
+
+ios 知识总结
+https://blog.csdn.net/robinson_911/article/details/80647459
+https://www.jianshu.com/p/e41e116837b5
+
+API 查询
+https://developer.apple.com/documentation/webkit/wkwebview
 
 
 
